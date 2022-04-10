@@ -1,0 +1,36 @@
+﻿@page
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@model ToyotaBPKAssessment.Pages.Index1Model
+@{
+    ViewData["Title"] = "User Entry";
+}
+<h1>Add a User:</h1>
+<form action="/UserEntry" method="post" asp-antiforgery="true">
+<br>
+Enter name
+<br /><input name="uName" value="@Model.uName" type="text"> </input> 
+<br />
+Enter email
+<br /><input name="uEmail" value="@Model.uEmail" type="text"> </input> 
+<br />
+Enter Phone
+<br /><input name="uPhone" value="@Model.uPhone" type="text"> </input>
+<br />
+Enter Address Line 1
+<br /><input name="maAddr1" value="@Model.maAddr1" type="text"> </input>
+<br />
+Enter Line 2
+<br /><input name="maAddr2" value = "@Model.maAddr2" type="text"> </input>
+<br />
+Enter City
+<br /><input name="maCity" value="@Model.maCity" type="text"> </input>
+<br />
+Enter State
+<br /><input name="maState" value="@Model.maState" type="text"> </input>
+<br />
+Enter Zip
+<br /><input name="maZip" value="@Model.maZip" type="text"> </input>
+<br />
+<br>
+<input type="submit" value="Submit">
+</form>
