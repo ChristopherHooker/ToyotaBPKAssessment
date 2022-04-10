@@ -24,10 +24,5 @@ namespace ToyotaBPKAssessment.EFObjects
             State = state;
             ZipCode = zipCode;
         }
-
-        public string getMailAddressString()
-        {
-            return Addr1 + " " + Addr2 + ", " + City + ", " + State + " " + ZipCode;
-        }
     }
 }

@@ -28,13 +28,10 @@ namespace ToyotaBPKAssessment.Pages
         [HttpGet("{id}")]
         public void OnGet(Guid id)
         {
+            //Add User ID that is being edited to work with on Post
             editUserID = id;
-            Console.WriteLine(id);
-            if (id == null)
-            {
-                Console.WriteLine("No ID Specified");
-                return;
-            }
+
+            //Populate Fields with existing user information
             BPKContext ctx = new BPKContext();
             User editUser = ctx.Users.Where(x => x.Id == id).FirstOrDefault();
             uName = editUser.Name;
@@ -50,7 +47,7 @@ namespace ToyotaBPKAssessment.Pages
         }
         public void OnPost()
         {
-            Console.WriteLine(editUserID.ToString());
+            //update user in BPKContext and save changes
             BPKContext ctx = new BPKContext();
             var updatedUser = ctx.Users.Where(x => x.Id == editUserID).First();
             updatedUser.Name = uName;
@@ -62,7 +59,6 @@ namespace ToyotaBPKAssessment.Pages
             updatedUser.MailAddress.State = maState;
             updatedUser.MailAddress.ZipCode = maZip;
             ctx.SaveChanges();
-            Console.WriteLine("User Saved: " + ctx.Database.Connection.ConnectionString);
         }
     }
 }
