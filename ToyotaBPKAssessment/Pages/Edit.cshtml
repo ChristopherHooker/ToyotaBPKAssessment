@@ -2,6 +2,11 @@
 @model ToyotaBPKAssessment.Pages.EditModel
 @{
 }
+<p>
+    <a asp-page="UserManagement">Go back</a>
+</p>
+<p id="notification">@Model.showNotification</p>
+
 <h1>Edit User:@Model.editUserID </h1>
 <form action="/Edit" method="post" asp-antiforgery="true">
 <input name="editUserID" value="@Model.editUserID" type="text" style="display:none" />

@@ -24,6 +24,7 @@ namespace ToyotaBPKAssessment.Pages
         public string maZip { get; set; }
         [BindProperty]
         public Guid editUserID { get; set; }
+        public string showNotification { get; set; }
 
         [HttpGet("{id}")]
         public void OnGet(Guid id)
@@ -59,6 +60,7 @@ namespace ToyotaBPKAssessment.Pages
             updatedUser.MailAddress.State = maState;
             updatedUser.MailAddress.ZipCode = maZip;
             ctx.SaveChanges();
+            showNotification = "User saved successfully!";
         }
     }
 }

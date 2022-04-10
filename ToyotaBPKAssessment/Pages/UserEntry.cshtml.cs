@@ -22,6 +22,7 @@ namespace ToyotaBPKAssessment.Pages
         public string maState { get; set; }
         [BindProperty]
         public string maZip { get; set; }
+        public string showNotification { get; set; }
 
         public void OnGet()
         {
@@ -34,7 +35,7 @@ namespace ToyotaBPKAssessment.Pages
             user.MailAddress = new MailAddress(maAddr1, maAddr2, maCity, maState, maZip);
             ctx.Users.Add(user);
             ctx.SaveChanges();
-            Console.WriteLine("User Saved: " + ctx.Database.Connection.ConnectionString);
+            showNotification = "User saved Successfully!";
         }
     }
 }
