@@ -46,7 +46,7 @@ namespace ToyotaBPKAssessment.Pages
 
 
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
             //update user in BPKContext and save changes
             BPKContext ctx = new BPKContext();
@@ -61,6 +61,7 @@ namespace ToyotaBPKAssessment.Pages
             updatedUser.MailAddress.ZipCode = maZip;
             ctx.SaveChanges();
             showNotification = "User saved successfully!";
+            return RedirectToPage("./UserManagement");
         }
     }
 }

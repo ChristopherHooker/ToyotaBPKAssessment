@@ -28,7 +28,7 @@ namespace ToyotaBPKAssessment.Pages
         {
 
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
             BPKContext ctx = new BPKContext();
             var user = new User(uName, uEmail, uPhone, new MailAddress());
@@ -36,6 +36,7 @@ namespace ToyotaBPKAssessment.Pages
             ctx.Users.Add(user);
             ctx.SaveChanges();
             showNotification = "User saved Successfully!";
+            return RedirectToPage("./UserManagement");
         }
     }
 }
