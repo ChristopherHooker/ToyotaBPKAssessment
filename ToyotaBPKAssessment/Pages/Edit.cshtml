@@ -10,31 +10,39 @@
 <h1>Edit User: </h1>
 <form action="/Edit" method="post" asp-antiforgery="true">
 <input name="editUserID" value="@Model.editUserID" type="text" style="display:none" />
-<br>
-Full Name
-<br /><input name="uName" value="@Model.uName" type="text"> </input> 
-<br />
-Email Address
-<br /><input name="uEmail" value="@Model.uEmail" type="text"> </input> 
-<br />
-Phone Number
-<br /><input name="uPhone" value="@Model.uPhone" type="text"> </input>
-<br />
-Address Line 1
-<br /><input name="maAddr1" value="@Model.maAddr1" type="text"> </input>
-<br />
-Address Line 2
-<br /><input name="maAddr2" value = "@Model.maAddr2" type="text"> </input>
-<br />
-City
-<br /><input name="maCity" value="@Model.maCity" type="text"> </input>
-<br />
-State
-<br /><input name="maState" value="@Model.maState" type="text"> </input>
-<br />
-Zip Code
-<br /><input name="maZip" value="@Model.maZip" type="text"> </input>
-<br />
-<br>
+<div class="container">
+    <div class="row justify-content-lg-start">
+        <div class="col-sm-3">
+            <h5>Contact Details</h5>
+            Full Name
+            <br /><input name="uName" value="@Model.uName" type="text"> </input> 
+            <br />
+            Email Address
+            <br /><input name="uEmail" value="@Model.uEmail" type="text"> </input> 
+            <br />
+            Phone Number
+            <br /><input name="uPhone" value="@Model.uPhone" type="text"> </input>
+            <br />
+        </div>
+        <div class="col-sm-3">
+            <h5>Mailing Address</h5>
+            Address Line 1
+            <br /><input name="maAddr1" value="@Model.maAddr1" type="text"> </input>
+            <br />
+            Address Line 2
+            <br /><input name="maAddr2" value = "@Model.maAddr2" type="text"> </input>
+            <br />
+            City
+            <br /><input name="maCity" value="@Model.maCity" type="text"> </input>
+            <br />
+            State
+            <br /><input name="maState" value="@Model.maState" type="text"> </input>
+            <br />
+            Zip Code
+            <br /><input name="maZip" value="@Model.maZip" type="text"> </input>
+            <br>
+        </div>
+    </div>
+</div>
 <input type="submit" value="Submit">
 </form>
